@@ -1,0 +1,19 @@
+[package]
+name = "hello-wasm"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+console_error_panic_hook = "0.1.6" # log panics
+console_log = "0.2.0"              # connects log to the js console
+js-sys = "0.3.47"                  # bindings to js default objects
+log = "0.4.14"                     # logging
+wasm-bindgen = "0.2.69"            # js - rust interop
+
+# bindings to DOM objects
+[dependencies.web-sys]
+version = "0.3.47"
+features = ['console', 'Window', 'Document', 'Element', 'HtmlElement']
